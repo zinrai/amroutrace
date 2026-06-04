@@ -1,0 +1,29 @@
+tests:
+  - name: "silenced has no receiver"
+    labels:
+      action: "drop"
+    expected_receivers: []
+    description: "An alert matched by a silencing route reaches no receiver"
+
+  - name: "single receiver"
+    labels:
+      severity: "info"
+    expected_receivers:
+      - "receiver-a"
+    description: "A plain alert routes to a single receiver"
+
+  - name: "fan out via continue"
+    labels:
+      severity: "warning"
+    expected_receivers:
+      - "receiver-a"
+      - "receiver-b"
+    description: "An alert that matches a continue route reaches two receivers"
+
+  - name: "nested route"
+    labels:
+      severity: "critical"
+      kind: "recovery"
+    expected_receivers:
+      - "receiver-c"
+    description: "An alert that matches a nested route reaches the inner receiver"

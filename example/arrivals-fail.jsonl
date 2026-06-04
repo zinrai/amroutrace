@@ -1,0 +1,3 @@
+{"receiver":"receiver-b","case":"single receiver"}
+{"receiver":"receiver-a","case":"fan out via continue"}
+{"receiver":"receiver-b","case":"fan out via continue"}
