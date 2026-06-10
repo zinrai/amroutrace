@@ -23,7 +23,6 @@ type Test struct {
 	Name              string            `yaml:"name"`
 	Labels            map[string]string `yaml:"labels"`
 	ExpectedReceivers []string          `yaml:"expected_receivers"`
-	Description       string            `yaml:"description"`
 }
 
 // loadSpec reads and parses the test specification at path.
