@@ -31,6 +31,9 @@ func main() {
 		err = runRewrite(os.Args[2:])
 	case "verify":
 		err = runVerify(os.Args[2:])
+	case "version":
+		printVersion()
+		return
 	case "-h", "--help", "help":
 		usage()
 		return
